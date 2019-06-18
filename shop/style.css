@@ -1,0 +1,291 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  scroll-behavior: smooth;
+  background-color: #f2f2f2;
+}
+
+body {
+  font-family: 'Barlow', sans-serif;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+header {
+  width: 100vw;
+  min-height: 10vh;
+  transform-style: inherit;
+  position: relative;
+}
+
+#shopping_basket {
+  border: 1px solid green;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  padding: 10px 100px;
+  box-sizing: border-box;
+  transition: .5s;
+}
+
+nav.black {
+  background: #252525;
+  height: 80px;
+  padding: 10px 50px;
+  z-index: 999;
+}
+
+nav.black .logo img {
+  height: 60px;
+  filter:invert(80%);
+}
+
+nav .logo {
+  float: left;
+}
+
+nav .logo img {
+  height: 80px;
+  transition: .5s;
+}
+
+nav ul {
+  float: right;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  line-height: 80px;
+  color: #262626;
+  padding: 5px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .5s;
+}
+
+nav.black ul li a {
+  color: #f2f2f2;
+  line-height: 60px;
+}
+
+nav ul li a.active {
+color: #f2f2f2;
+background: #433315;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+color: #f2f2f2;
+background: #433315;
+}
+
+
+.logobig img {
+  display: block;
+  height: 60%;
+  position: absolute;
+  top: 20%;
+  left: 38%;
+  filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.2)) invert(50%);
+  animation: movelogo 5s infinite;
+}
+
+@keyframes movelogo {
+  from {
+    transform: rotate(0deg) translate(-3px) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translate(-3px) rotate(-360deg);
+  }
+}
+
+
+.container img {
+  max-width: 100%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+h1 {
+  font-size: 7vw;
+}
+
+p {
+  font-size: 1.2vw;
+  padding: 20px;
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+  "EmptyLeft CoffeeHeadline CoffeeHeadline CoffeeHeadline CoffeeHeadline CoffeeHeadline CoffeeHeadline EmptyRight"
+  "EmptyLeft ItemOne ItemOne ItemTwo ItemTwo ItemThree ItemThree EmptyRight"
+  "EmptyLeft TeaHeadline TeaHeadline TeaHeadline TeaHeadline TeaHeadline TeaHeadline EmptyRight"
+  "EmptyLeft ItemFour ItemFour ItemFive ItemFive ItemSix ItemSix EmptyRight"
+  "EmptyLeft ChocoHeadline ChocoHeadline ChocoHeadline ChocoHeadline ChocoHeadline ChocoHeadline EmptyRight"
+  "EmptyLeft ItemSeven ItemSeven ItemEight ItemEight ItemNine ItemNine EmptyRight"
+  "EmptyLeft ItemSeven ItemSeven ItemEight ItemEight ItemNine ItemNine EmptyRight";
+  grid-gap:0 30px;
+}
+
+.ItemOne {
+  grid-area: ItemOne;
+}
+
+.ItemTwo {
+  grid-area: ItemTwo;
+}
+
+.ItemThree {
+  grid-area: ItemThree;
+}
+
+.ItemFour {
+  grid-area: ItemFour;
+}
+
+.ItemFive {
+  grid-area: ItemFive;
+}
+
+.ItemSix {
+  grid-area: ItemSix;
+}
+
+.ItemSeven {
+  grid-area: ItemSeven;
+}
+
+.ItemEight {
+  grid-area: ItemEight;
+}
+
+.ItemNine {
+  grid-area: ItemNine;
+}
+
+.CoffeeHeadline {
+  grid-area: CoffeeHeadline;
+  padding: 80px 0;
+}
+
+.TeaHeadline {
+  grid-area: TeaHeadline;
+  padding: 80px 0;
+}
+
+.ChocoHeadline {
+  grid-area: ChocoHeadline;
+  padding: 80px 0;
+}
+
+.EmptyLeft {
+  grid-area: EmptyLeft;
+}
+
+.EmptyRight {
+  grid-area: EmptyRight;
+}
+
+.dtl08 {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.dtl08 img {
+  position: relative;
+  width: 100%;
+  top: 0;
+  left: 0;
+  transition: all .5s;
+}
+
+.dtl08 .dtl {
+  position: absolute;
+  background: #333;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  padding: 0 15px 0 15px;
+  left: 0;
+  z-index: 1;
+  overflow: auto;
+  visibility: hidden;
+  transition: all .5s;
+}
+
+.dtl08 .dtl h3 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: normal;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.dtl08 .dtl p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  color: #9d9c9c;
+}
+
+.dtl08 .dtl a {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  color: #333;
+  float: right;
+  font-size: 13px;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.dtl08 .dtl a:hover {
+  background: #e6e6e6;
+  border: 1px solid #adadad;
+}
+
+.dtl08:hover img {
+  top: -100%;
+}
+
+.dtl08:hover .dtl {
+  top: 0;
+  opacity: 1;
+  visibility: visible;
+}
+
+/*////////////////////////////JS-ANIMATIONS/////////////////////////////////*/
+
+.frombottom-hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.fade-in-text {
+  transform: translateY(0);
+  transition: 1s all ease-in-out;
+}
